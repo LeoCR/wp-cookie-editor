@@ -1,0 +1,9 @@
+{
+    "cookies_policy": {
+        "message": "Bienvenido al sitio web de {{siteOwner}}. En este sitio utilizamos cookies para comprender mejor a nuestra audiencia. ",
+        "editor":"editor de cookies",
+        "privacy_policy":"politicas de privacidad",
+        "privacy_policy_msg":"Si desea conocer mas sobre la forma en que usamos las cookies lo invitamos a que por favor visite nuestra pagina de",
+        "privacy_policy_url":"/politicas-de-privacidad"
+    }
+}
