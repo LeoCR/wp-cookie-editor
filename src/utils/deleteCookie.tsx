@@ -1,22 +1,26 @@
-export const deleteCookie=()=>{
-    let cookies = document.cookie.split(";");
-    if(cookies.length){
-        cookies=cookies.map((cook)=>cook.trim())
+export const deleteCookie=(analytics:boolean)=>{
+    if(analytics===true){
+        let cookies = document.cookie.split(";");
+        if(cookies.length){
+            cookies=cookies.map((cook)=>cook.trim())
+        }
+        for (var i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i];
+            if(typeof cookie ==='string'){
+                    deleteAnalyticsCookies(cookie)
+            }    
+        }
     }
-    for (var i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i];
-        console.log('typeof cookie',typeof cookie)
-        if(typeof cookie ==='string'){
-            if(cookie.search(/^_ga_\w+/)===0){
-            console.log('cookie.search(/^_ga_/)',cookie.search(/^_ga_\w+/))
-            console.log('$$$$$cookie',cookie)
-            }
-            if(cookie.search(/^_ga=\w+/)===0){
-                console.log('cookie.search(/^_ga=/)',cookie.search(/^_ga=\w+/))
-                console.log('$$$$$cookie',cookie)
-            }
-        }    
-    }
-    console.log('cookies',cookies)
+    
 }
    
+const deleteAnalyticsCookies=(cookie:string)=>{
+    if(cookie.search(/^_ga_\w+/)===0||cookie.search(/^_ga_/)===0){
+        document.cookie=cookie+";max-age=0"; 
+        console.log('deleteAnalyticsCookies.cookie',cookie)
+        }
+        if(cookie.search(/^_ga=\w+/)===0){
+            document.cookie=cookie+";max-age=0";
+            console.log('deleteAnalyticsCookies.cookie',cookie) 
+        }
+}

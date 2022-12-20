@@ -9,9 +9,14 @@ const App=()=> {
   const {t} = useTranslation('common');
   const [siteOwner,setSiteOwner] = useState<string|undefined>("Leonardo Aranibar");
   useEffect(()=>{
-    const wrapper=document.querySelector('.wp-cookie-policy-settings')
-    const newSiteOwner=wrapper?.getAttribute('data-site-owner')?.toString();
-    setSiteOwner(newSiteOwner);
+    const wrapper=document.querySelector('.wp-cookie-policy-settings')!
+    if(wrapper){
+      const newSiteOwner=wrapper.getAttribute('data-site-owner')?.toString();
+      if(newSiteOwner){
+        setSiteOwner(newSiteOwner);
+      }
+    }
+    
   },[])
   const openCookieEditor=()=>{
     setIsCookieEditorOpen((prev)=>!prev)

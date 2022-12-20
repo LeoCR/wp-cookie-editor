@@ -45,10 +45,15 @@ export const CookiesDialogs = ({ open }:ICookiesDialogsProps) => {
   };
 
   const onChangeAnalytics=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    console.log('event',event)
+    if(event.target.checked===false){
+      deleteCookie(!event.target.checked);
+      console.log('!event.target.checked',!event.target.checked)
+    }
     setCookiesSelected({
       analytics:event.target.checked
     });
-    deleteCookie();
+   
   }
 
   return (
