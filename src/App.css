@@ -8,7 +8,11 @@
   font-size: 12px;
   text-align: center;
 }
-
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
 .wp-txt-cookie-msg {
   color: #ffffff;
   font-size: 13px !important;
@@ -39,6 +43,11 @@
   margin: 10px;
   line-height: 2;
   cursor: pointer;
+}
+.cookie_title {
+  float: left;
+  width: 170px;
+  line-height: 2.3;
 }
 
 @media screen and (max-width: 900px) {

@@ -9,6 +9,8 @@
     "privacy_policy_url": "/privacy-policy",
     "accept": "I Agree",
     "reject": "Reject All",
+    "functionals": "Functionals",
+    "functionals_content": "They are necessary to correctly display the section of our services on our website and guarantee the proper functioning of our site. Without them our services section can NOT function correctly and the Privacy Policy banner will always be visible.",
     "essentials": "Essencials",
     "essentials_content": "Son las cookies que son imprescindibles y estrictamente necesarias para el correcto funcionamiento como por ejemplo, las que sirven para restringir el acceso a ciertas areas del sitio web donde solo puede accederse mediante una clave o contraseña.",
     "analytics": "Analytics",

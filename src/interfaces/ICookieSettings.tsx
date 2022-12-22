@@ -1,5 +1,4 @@
 export interface ICookieSettings {
   analytics?: boolean;
-  essentials?: boolean;
-  functional?: boolean;
+  functionals?: boolean;
 }

@@ -1,6 +1,6 @@
 import { ICookieSettings } from "../interfaces/ICookieSettings";
 
-export const deleteCookie = (options: ICookieSettings) => {
+export const DeleteCookies = (options: ICookieSettings) => {
   let cookies = document.cookie.split(";");
   if (cookies.length) {
     cookies = cookies.map((cook) => cook.trim());
@@ -11,7 +11,7 @@ export const deleteCookie = (options: ICookieSettings) => {
       if (options.analytics === true) {
         deleteAnalyticsCookies(cookie);
       }
-      if (options.functional === true) {
+      if (options.functionals === true) {
         deleteFunctionalCookies(cookie);
       }
     }

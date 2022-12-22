@@ -6,16 +6,21 @@ import { BlackButton } from "../Buttons/BlackButton";
 import { BootstrapDialog } from "./BootstrapDialog";
 import { YellowButton } from "../Buttons/YellowButton";
 import { useCookies } from "../../hooks/useCookies";
+import { DeleteCookies } from "../../utils/DeleteCookies";
 
 export const CookiesDialogs = ({
   open,
   setOpenDialog,
   t,
 }: ICookiesDialogsProps) => {
+  const { GetCookies } = useCookies();
+
   const handleClose = () => {
     setOpenDialog(false);
   };
   const onAccept = () => {
+    const cookiesSelected = GetCookies();
+    DeleteCookies(cookiesSelected.settings);
     handleClose();
   };
 

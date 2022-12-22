@@ -5,6 +5,8 @@ import { IUserSttings } from "./interfaces/IUserSettings";
 import "./App.css";
 import { Typography } from "@mui/material";
 import { useCookies } from "./hooks/useCookies";
+import { DeleteCookies } from "./utils/DeleteCookies";
+import { CalculateDateDiferrence } from "./utils/CalculateDateDifference";
 
 const App = () => {
   const { GetCookies } = useCookies();
@@ -18,6 +20,10 @@ const App = () => {
   const [siteOwner, setSiteOwner] = React.useState<string | undefined>(
     "Leonardo Aranibar"
   );
+  const [monthsAfterApproval, setMonthsAfterApproval] =
+    React.useState<luxon.DurationObjectUnits>({
+      months: 0,
+    });
   React.useEffect(() => {
     const wrapper = document.querySelector(".wp-cookie-policy-settings")!;
     if (wrapper) {
@@ -26,7 +32,16 @@ const App = () => {
         setSiteOwner(newSiteOwner);
       }
     }
-
+    if (userSettings) {
+      if (Object.keys(userSettings.settings).length) {
+        DeleteCookies(userSettings.settings);
+      }
+      if (typeof userSettings.dateOfApproval === "string") {
+        setMonthsAfterApproval(
+          CalculateDateDiferrence(userSettings.dateOfApproval)
+        );
+      }
+    }
     return () => {
       setIsCookieEditorOpen(false);
       setSiteOwner("Leonardo Aranibar");
@@ -36,7 +51,9 @@ const App = () => {
 
   const privacyPolicyURL = t("cookies_policy.privacy_policy_url");
 
-  return (
+  return monthsAfterApproval &&
+    monthsAfterApproval.months &&
+    monthsAfterApproval.months >= 6 ? (
     <>
       <CookiesDialogs
         userSettingsSaved={userSettings as Object}
@@ -82,6 +99,9 @@ const App = () => {
                   ...(newState as IUserSttings),
                 };
               });
+              setMonthsAfterApproval(
+                CalculateDateDiferrence(new Date().toISOString())
+              );
             }}
             className={"okBtn"}
           >
@@ -90,6 +110,8 @@ const App = () => {
         </Typography>
       </div>
     </>
+  ) : (
+    <></>
   );
 };
 

@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { deleteCookie } from "../utils/deleteCookie";
+import { DeleteCookies } from "../utils/DeleteCookies";
 import { IAccordionProps } from "../interfaces/IAccordionProps";
 import { useCookies } from "../hooks/useCookies";
 const label = { inputProps: { "aria-label": "Switch demo" } };
@@ -15,23 +15,21 @@ const label = { inputProps: { "aria-label": "Switch demo" } };
 export const AccordionCookies = ({ t }: IAccordionProps) => {
   const { cookiesSelected, SetCookies } = useCookies();
 
-  const onChangeAnalytics = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeCookie = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const key = event.target.name;
     if (event.target.checked === false) {
-      deleteCookie({
-        analytics: !event.target.checked,
+      DeleteCookies({
+        [key]: !event.target.checked,
       });
-      console.log("!event.target.checked", !event.target.checked);
     }
-    console.log("event.target.checked", event.target.checked);
     SetCookies({
       ...cookiesSelected,
       settings: {
         ...cookiesSelected.settings,
-        analytics: event.target.checked,
+        [key]: event.target.checked,
       },
     });
   };
-  console.log("cookiesSelected", cookiesSelected);
   return (
     <>
       <Accordion>
@@ -41,7 +39,9 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
           id="panel1a-header"
         >
           <Typography component={"h4"}>
-            Cookies {t("cookies_policy.essentials")}
+            <span className="cookie_title">
+              Cookies {t("cookies_policy.essentials")}
+            </span>
             <Switch {...label} checked={true} disabled />
           </Typography>
         </AccordionSummary>
@@ -57,9 +57,42 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
           style={{ margin: "0 !important" }}
         >
           <Typography component={"h4"}>
-            Cookies {t("cookies_policy.analytics")}
+            <span className="cookie_title">
+              Cookies {t("cookies_policy.functionals")}
+            </span>
             <Switch
               {...label}
+              name="functionals"
+              checked={
+                cookiesSelected &&
+                cookiesSelected.settings &&
+                Object.keys(cookiesSelected.settings).length > 1 &&
+                cookiesSelected.settings.functionals === true
+                  ? true
+                  : false
+              }
+              onChange={onChangeCookie}
+            />
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{t("cookies_policy.functionals_content")}</Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+          style={{ margin: "0 !important" }}
+        >
+          <Typography component={"h4"}>
+            <span className="cookie_title">
+              Cookies {t("cookies_policy.analytics")}
+            </span>
+            <Switch
+              {...label}
+              name="analytics"
               checked={
                 cookiesSelected &&
                 cookiesSelected.settings &&
@@ -68,7 +101,7 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
                   ? true
                   : false
               }
-              onChange={onChangeAnalytics}
+              onChange={onChangeCookie}
             />
           </Typography>
         </AccordionSummary>
