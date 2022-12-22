@@ -1,9 +1,17 @@
 {
-    "cookies_policy": {
-        "message": "Bienvenido al sitio web de {{siteOwner}}. En este sitio utilizamos cookies para comprender mejor a nuestra audiencia. ",
-        "editor":"editor de cookies",
-        "privacy_policy":"politicas de privacidad",
-        "privacy_policy_msg":"Si desea conocer mas sobre la forma en que usamos las cookies lo invitamos a que por favor visite nuestra pagina de",
-        "privacy_policy_url":"/politicas-de-privacidad"
-    }
+  "cookies_policy": {
+    "title": "Editor de Cookies",
+    "message": "Bienvenido al sitio web de {{siteOwner}}. En este sitio utilizamos cookies para comprender mejor a nuestra audiencia. ",
+    "editor": "editor de cookies",
+    "privacy_policy": "politicas de privacidad",
+    "privacy_policy_msg": "Si desea conocer mas sobre la forma en que usamos las cookies lo invitamos a que por favor visite nuestra pagina de",
+    "or_use": "o utilice nuestro",
+    "privacy_policy_url": "/politicas-de-privacidad",
+    "accept": "Aceptar",
+    "reject": "Rechazar Todo",
+    "essentials": "Esenciales",
+    "essentials_content": "Son las cookies que son imprescindibles y estrictamente necesarias para el correcto funcionamiento como por ejemplo, las que sirven para restringir el acceso a ciertas areas del sitio web donde solo puede accederse mediante una clave o contraseña.",
+    "analytics": "Analiticas",
+    "analytics_content": "Se utilizan para elaborar perfiles de navegación y poder conocer las preferencias de los usuarios del mismo con el fin de mejorar la oferta de productos y servicios. Sin ellas, no podemos saber qué contenido es más valorado ni con qué frecuencia regresan al sitio los visitantes únicos, lo que dificulta mejorar la información que le ofrecemos."
+  }
 }

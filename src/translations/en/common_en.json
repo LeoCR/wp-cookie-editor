@@ -1,9 +1,17 @@
 {
-    "cookies_policy": {
-        "message": "Welcome to {{siteOwner}} site. On this site we use cookies to better understand our audience. If you want to know more about the way we use cookies,  ",
-        "editor":"cookie editor",
-        "privacy_policy_msg":"we invite you to please visit our web page of ",
-        "privacy_policy":"privacy policy",
-        "privacy_policy_url":"/privacy-policy"
-    }
+  "cookies_policy": {
+    "title": "Cookies Editor",
+    "message": "Welcome to {{siteOwner}} site. On this site we use cookies to better understand our audience. If you want to know more about the way we use cookies,  ",
+    "editor": "cookie editor",
+    "privacy_policy_msg": "we invite you to please visit our web page of ",
+    "privacy_policy": "privacy policy",
+    "or_use": "or use our",
+    "privacy_policy_url": "/privacy-policy",
+    "accept": "I Agree",
+    "reject": "Reject All",
+    "essentials": "Essencials",
+    "essentials_content": "Son las cookies que son imprescindibles y estrictamente necesarias para el correcto funcionamiento como por ejemplo, las que sirven para restringir el acceso a ciertas areas del sitio web donde solo puede accederse mediante una clave o contraseña.",
+    "analytics": "Analytics",
+    "analytics_content": "Se utilizan para elaborar perfiles de navegación y poder conocer las preferencias de los usuarios del mismo con el fin de mejorar la oferta de productos y servicios. Sin ellas, no podemos saber qué contenido es más valorado ni con qué frecuencia regresan al sitio los visitantes únicos, lo que dificulta mejorar la información que le ofrecemos."
+  }
 }
