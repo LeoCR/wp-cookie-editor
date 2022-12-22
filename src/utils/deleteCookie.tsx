@@ -27,8 +27,8 @@ const deleteAnalyticsCookies = (cookie: string) => {
     cookie.search(/^_gid=\w+/) === 0
   ) {
     document.cookie = cookie + ";max-age=0";
+    console.log("deleteAnalyticsCookies.cookie", cookie);
   }
-  console.log("deleteAnalyticsCookies.cookie", cookie);
 };
 
 const deleteFunctionalCookies = (cookie: string) => {
@@ -37,6 +37,6 @@ const deleteFunctionalCookies = (cookie: string) => {
     cookie.toUpperCase().search(/^_GRECAPTCHA\w+/) === 0
   ) {
     document.cookie = cookie + ";max-age=0";
+    console.log("deleteFunctionalCookies.cookie", cookie);
   }
-  console.log("deleteFunctionalCookies.cookie", cookie);
 };

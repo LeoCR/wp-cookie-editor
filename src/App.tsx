@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import { useCookies } from "./hooks/useCookies";
 
 const App = () => {
-  const { cookiesSelected, SetCookies, GetCookies } = useCookies();
+  const { GetCookies } = useCookies();
   const cookiesSaved = GetCookies();
   const [isCookieEditorOpen, setIsCookieEditorOpen] =
     React.useState<boolean>(false);
@@ -26,13 +26,7 @@ const App = () => {
         setSiteOwner(newSiteOwner);
       }
     }
-    /* let userSettingsSaved = cookiesSelected;
-    if (userSettingsSaved) {
-      if (Object.keys(userSettingsSaved as Object).length === 3) {
-        setUserSettings(userSettingsSaved as IUserSttings);
-      }
-    }
-    SetCookies(userSettingsSaved as IUserSttings); */
+
     return () => {
       setIsCookieEditorOpen(false);
       setSiteOwner("Leonardo Aranibar");
@@ -41,7 +35,7 @@ const App = () => {
   }, []);
 
   const privacyPolicyURL = t("cookies_policy.privacy_policy_url");
-  console.log("userSettings", userSettings);
+
   return (
     <>
       <CookiesDialogs
