@@ -10,7 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 
 i18next.use(LanguageDetector).init({
   interpolation: { escapeValue: false },
-  lng: "es", // language to use
+  //lng: "es", // language to use
   resources: {
     es: {
       common: common_es,
