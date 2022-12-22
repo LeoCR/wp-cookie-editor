@@ -1,12 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { CookiesDialogs } from "./components/Dialog/Dialog";
-import { IUserSttings } from "./interfaces/IUserSettings";
-import "./App.css";
 import { Typography } from "@mui/material";
+import { IUserSttings } from "./interfaces/IUserSettings";
 import { useCookies } from "./hooks/useCookies";
 import { DeleteCookies } from "./utils/DeleteCookies";
 import { CalculateDateDiferrence } from "./utils/CalculateDateDifference";
+import { CookiesDialogs } from "./components/Dialog/Dialog";
+import "./App.css";
 
 const App = () => {
   const { GetCookies } = useCookies();
@@ -51,9 +51,10 @@ const App = () => {
 
   const privacyPolicyURL = t("cookies_policy.privacy_policy_url");
 
-  return monthsAfterApproval &&
+  return (monthsAfterApproval &&
     monthsAfterApproval.months &&
-    monthsAfterApproval.months >= 6 ? (
+    monthsAfterApproval.months >= 6) ||
+    userSettings.status === 0 ? (
     <>
       <CookiesDialogs
         userSettingsSaved={userSettings as Object}

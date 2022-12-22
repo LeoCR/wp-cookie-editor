@@ -1,8 +1,8 @@
-import { DateTime } from "luxon";
+import { DateTime, DurationObjectUnits } from "luxon";
 
 export const CalculateDateDiferrence = (
   dateSaved: string
-): luxon.DurationObjectUnits => {
+): DurationObjectUnits => {
   const todayDate = DateTime.fromISO(new Date().toISOString());
   const dateOfApproval = DateTime.fromISO(dateSaved);
 
