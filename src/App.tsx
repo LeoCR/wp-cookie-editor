@@ -42,12 +42,20 @@ const App = () => {
         );
       }
     }
+    const cookiesEditorLink = document.querySelector(
+      ".wp-cookies-editor-link"
+    )!;
+    cookiesEditorLink.addEventListener("click", toggleModal);
     return () => {
       setIsCookieEditorOpen(false);
       setSiteOwner("Leonardo Aranibar");
+      cookiesEditorLink.removeEventListener("click", toggleModal);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const toggleModal = () => {
+    setIsCookieEditorOpen((prev) => !prev);
+  };
 
   const privacyPolicyURL = t("cookies_policy.privacy_policy_url");
 
@@ -112,7 +120,14 @@ const App = () => {
       </div>
     </>
   ) : (
-    <></>
+    <>
+      <CookiesDialogs
+        userSettingsSaved={userSettings as Object}
+        open={isCookieEditorOpen}
+        setOpenDialog={setIsCookieEditorOpen}
+        t={t}
+      />
+    </>
   );
 };
 

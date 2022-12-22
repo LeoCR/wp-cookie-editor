@@ -34,7 +34,8 @@ const deleteAnalyticsCookies = (cookie: string) => {
 const deleteFunctionalCookies = (cookie: string) => {
   if (
     cookie.toUpperCase().search(/^_GRECAPTCHA/) === 0 ||
-    cookie.toUpperCase().search(/^_GRECAPTCHA\w+/) === 0
+    cookie.toUpperCase().search(/^_GRECAPTCHA\w+/) === 0 ||
+    cookie.search(/^_grecaptcha/) === 0
   ) {
     document.cookie = cookie + ";max-age=0";
     console.log("deleteFunctionalCookies.cookie", cookie);

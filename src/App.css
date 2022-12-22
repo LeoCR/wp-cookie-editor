@@ -1,3 +1,8 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
 .wp-cookie-msg-container {
   background: #000000;
   padding: 6px 15px;
@@ -8,11 +13,7 @@
   font-size: 12px;
   text-align: center;
 }
-body {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 auto;
-}
+
 .wp-txt-cookie-msg {
   color: #ffffff;
   font-size: 13px !important;
@@ -30,7 +31,7 @@ body {
 }
 .btn {
   text-transform: lowercase !important;
-  color: rgb(255, 191, 89);
+  color: #ffb462;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -48,6 +49,11 @@ body {
   float: left;
   width: 170px;
   line-height: 2.3;
+}
+.wp-cookies-editor-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ffb462;
 }
 
 @media screen and (max-width: 900px) {
