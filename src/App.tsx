@@ -78,7 +78,7 @@ const App = () => {
             href={privacyPolicyURL}
             target={"_blank"}
             rel="noreferrer"
-            className="btn"
+            className="btn_wp_cookies_editor"
           >
             {t("cookies_policy.privacy_policy")}{" "}
           </a>{" "}
@@ -87,7 +87,7 @@ const App = () => {
             onClick={() => {
               setIsCookieEditorOpen(true);
             }}
-            className="btn"
+            className="btn_wp_cookies_editor"
           >
             {t("cookies_policy.editor")}
           </span>

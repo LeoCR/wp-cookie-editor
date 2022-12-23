@@ -12,6 +12,7 @@ body {
   height: 90px;
   font-size: 12px;
   text-align: center;
+  z-index: 9999999999 !important;
 }
 
 .wp-txt-cookie-msg {
@@ -29,7 +30,7 @@ body {
   text-align: start;
   margin-top: 5px !important;
 }
-.btn {
+.btn_wp_cookies_editor {
   text-transform: lowercase !important;
   color: #ffb462;
   cursor: pointer;
