@@ -64,3 +64,10 @@ body {
     height: 121px;
   }
 }
+@media screen and (max-width: 700px) {
+  .wp-cookie-msg-container {
+    height: 150px;
+    top: 77%;
+    width: 100%;
+  }
+}
