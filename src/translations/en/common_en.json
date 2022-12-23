@@ -10,10 +10,10 @@
     "accept": "I Agree",
     "reject": "Reject All",
     "functionals": "Functionals",
-    "functionals_content": "They are necessary to correctly display the section of our services on our website and guarantee the proper functioning of our site. Without them our services section can NOT function correctly and the Privacy Policy banner will always be visible.",
+    "functionals_content": "They are necessary to correctly display the section of our services on our website and guarantee the proper functioning of our site. Without them our services section can NOT function correctly.",
     "essentials": "Essencials",
-    "essentials_content": "Son las cookies que son imprescindibles y estrictamente necesarias para el correcto funcionamiento como por ejemplo, las que sirven para restringir el acceso a ciertas areas del sitio web donde solo puede accederse mediante una clave o contraseña.",
+    "essentials_content": "These are the cookies that are essential and strictly necessary for proper functioning, such as those that serve to restrict access to certain areas of the website where it can only be accessed by means of a key or password.",
     "analytics": "Analytics",
-    "analytics_content": "Se utilizan para elaborar perfiles de navegación y poder conocer las preferencias de los usuarios del mismo con el fin de mejorar la oferta de productos y servicios. Sin ellas, no podemos saber qué contenido es más valorado ni con qué frecuencia regresan al sitio los visitantes únicos, lo que dificulta mejorar la información que le ofrecemos."
+    "analytics_content": "They are used to create browsing profiles and to know the preferences of its users in order to improve the offer of products and services. Without them, we can't know what content is most valued or how often unique visitors return to the site, making it difficult to improve the information we offer you."
   }
 }
