@@ -46,7 +46,9 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{t("cookies_policy.essentials_content")}</Typography>
+          <Typography className="wp_cookies_txt_accordion">
+            {t("cookies_policy.essentials_content")}
+          </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -76,7 +78,9 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{t("cookies_policy.functionals_content")}</Typography>
+          <Typography className="wp_cookies_txt_accordion">
+            {t("cookies_policy.functionals_content")}
+          </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -106,7 +110,9 @@ export const AccordionCookies = ({ t }: IAccordionProps) => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{t("cookies_policy.analytics_content")}</Typography>
+          <Typography className="wp_cookies_txt_accordion">
+            {t("cookies_policy.analytics_content")}
+          </Typography>
         </AccordionDetails>
       </Accordion>
     </>
